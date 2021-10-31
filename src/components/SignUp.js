@@ -1,9 +1,10 @@
 import React, { useState, useRef } from 'react';
 import { Form, Button, Card, Alert } from "react-bootstrap"
-import { useAuth } from '../contexts/AuthContext'
+import { useAuth, currentUser } from '../contexts/AuthContext'
+import { Link, useHistory } from "react-router-dom"
 
 export const SignUp = () => {
-    const { signUp } = useAuth();
+    const { signUp, currentUser } = useAuth();
     const emailRef = useRef();
     const passwordRef = useRef();
     const passwordConfirmRef = useRef();
@@ -56,7 +57,7 @@ export const SignUp = () => {
         </Card.Body>
       </Card>
       <div className="w-100 text-center mt-2">
-        Already have an account? Log In
+        Already have an account? <Link to="/login">Log In</Link>
       </div>
     </>
     );
