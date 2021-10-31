@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState, useRef } from 'react';
 import { Form, Button, Card, Alert } from "react-bootstrap"
 import { useAuth } from '../contexts/AuthContext'
 
@@ -20,6 +20,8 @@ export const SignUp = () => {
         try {
             setError('');
             setLoading(true);
+            console.log(emailRef.current.value)
+            console.log(passwordRef.current.value)
             await signUp(emailRef.current.value, passwordRef.current.value)
         } catch {
             setError('Failed to create an account');
@@ -47,14 +49,14 @@ export const SignUp = () => {
               <Form.Label>Password Confirmation</Form.Label>
               <Form.Control type="password" ref={passwordConfirmRef} required />
             </Form.Group>
-            <Button disabled={loading} className="w-100" type="submit">
+            <Button disabled={loading} className="w-100 mt-4" type="submit">
               Sign Up
             </Button>
           </Form>
         </Card.Body>
       </Card>
       <div className="w-100 text-center mt-2">
-        Already have an account? <Link to="/login">Log In</Link>
+        Already have an account? Log In
       </div>
     </>
     );

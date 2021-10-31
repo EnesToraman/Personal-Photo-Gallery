@@ -1,5 +1,15 @@
 import React, { useState, useEffect, useContext } from 'react';
 import { auth } from '../firebase/config'
+import {
+    createUserWithEmailAndPassword,
+    signInWithEmailAndPassword,
+    signOut,
+    sendPasswordResetEmail,
+    updateEmail,
+    updatePassword,
+    onAuthStateChanged
+} from '@firebase/auth';
+
 
 const AuthContext = React.createContext();
 
@@ -11,47 +21,48 @@ export const AuthProvider = ({ children }) => {
     const [currentUser, setCurrentUser] = useState();
     const [loading, setLoading] = useState(true);
 
-    const value = [
-        signUp,
-        logIn,
-        logOut,
-        resetPassword,
-        updateEmail,
-        updatePassword
-    ]
-
     const signUp = (email, password) => {
-        return auth.createUserWithEmailAndPassword(email, password);
+        return createUserWithEmailAndPassword(auth, email, password);
     }
 
     const logIn = (email, password) => {
-        return auth.signInWithEmailAndPassword(email, password);
+        return signInWithEmailAndPassword(auth, email, password);
     }
 
     const logOut = () => {
-        return auth.signOut;
+        return signOut(auth);
     }
 
     const resetPassword = (email) => {
-        return auth.sendPasswordResetEmail(email);
+        return sendPasswordResetEmail(auth, email);
     }
 
-    const updateEmail = (email) => {
-        return currentUser.updateEmail(email);
+    const changeEmail = (email) => {
+        return updateEmail(currentUser, email);
     }
 
-    const updatePassword = (password) => {
-        return currentUser.updatePassword(password);
+    const changePassword = (password) => {
+        return updatePassword(currentUser, password);
     }
 
     useEffect(() => {
-        const unsub = auth.onAuthStateChanged(user => {
+        const unsub = onAuthStateChanged(auth, (user) => {
             setCurrentUser(user)
             setLoading(false)
         })
 
         return unsub
     }, [])
+
+    const value = [
+        currentUser,
+        signUp,
+        logIn,
+        logOut,
+        resetPassword,
+        changeEmail,
+        changePassword
+    ]
 
     return (
         <AuthContext.Provider value={value}>
