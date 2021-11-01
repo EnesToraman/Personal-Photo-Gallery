@@ -6,7 +6,7 @@ import { Link, useHistory } from "react-router-dom"
 export const LogIn = () => {
     const emailRef = useRef()
     const passwordRef = useRef()
-    const { login } = useAuth()
+    const { logIn } = useAuth()
     const [error, setError] = useState("")
     const [loading, setLoading] = useState(false)
     const history = useHistory()
@@ -17,7 +17,7 @@ export const LogIn = () => {
         try {
             setError("")
             setLoading(true)
-            await login(emailRef.current.value, passwordRef.current.value)
+            await logIn(emailRef.current.value, passwordRef.current.value)
             history.push("/")
         } catch {
             setError("Failed to log in")
@@ -51,7 +51,7 @@ export const LogIn = () => {
                 </Card.Body>
             </Card>
             <div className="w-100 text-center mt-2">
-                Need an account? <Link to="/signup">Sign Up</Link>
+                Need an account? <Link to="/signup">Sign up</Link>
             </div>
         </>
     )

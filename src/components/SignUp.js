@@ -10,6 +10,7 @@ export const SignUp = () => {
     const passwordConfirmRef = useRef();
     const [error, setError] = useState("");
     const [loading, setLoading] = useState(false);
+    const history = useHistory()
 
     const handleSubmit = async (e) => {
         e.preventDefault();
@@ -24,6 +25,7 @@ export const SignUp = () => {
             console.log(emailRef.current.value)
             console.log(passwordRef.current.value)
             await signUp(emailRef.current.value, passwordRef.current.value)
+            history.push("/")
         } catch {
             setError('Failed to create an account');
         }
@@ -57,7 +59,7 @@ export const SignUp = () => {
         </Card.Body>
       </Card>
       <div className="w-100 text-center mt-2">
-        Already have an account? <Link to="/login">Log In</Link>
+        Already have an account? <Link to="/login">Log in</Link>
       </div>
     </>
     );
