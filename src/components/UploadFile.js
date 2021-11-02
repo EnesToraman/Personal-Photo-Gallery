@@ -1,11 +1,12 @@
 import React, { useState } from 'react';
+import { ProgressBar } from './ProgressBar';
 
 
 export const UploadFile = () => {
     const [file, setFile] = useState();
     const [error, setError] = useState();
 
-    const types = ['image/png', 'image.jpeg']
+    const types = ['image/png', 'image/jpeg']
 
     const handleChange = (e) => {
         let selected = e.target.files[0];
@@ -27,8 +28,8 @@ export const UploadFile = () => {
             </label>
             <div className="output">
                 {error && <div className="error">{error}</div>}
-                {file && <div>{file.name}</div>}
-                {file && <ProgressBar file={file} setFile={setFile} />}
+                {file && <div>{ file.name }</div>}
+                { file && <ProgressBar file={file} setFile={setFile} /> }
             </div>
         </form>
     );

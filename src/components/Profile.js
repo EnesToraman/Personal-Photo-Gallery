@@ -1,7 +1,9 @@
 import React, { useState } from "react"
-import { Card, Button, Alert } from "react-bootstrap"
 import { useAuth } from "../contexts/AuthContext"
-import { Link, useHistory } from "react-router-dom"
+import { useHistory } from "react-router-dom"
+import { UploadFile } from "./UploadFile"
+import { ProgressBar } from "./ProgressBar"
+import { ImageArea } from "./ImageArea"
 
 export const Profile = () => {
     const [error, setError] = useState("")
@@ -21,18 +23,9 @@ export const Profile = () => {
 
     return (
         <>
-          <Card>
-            <Card.Body>
-              <h2 className="text-center mb-4">Profile</h2>
-              {error && <Alert variant="danger">{error}</Alert>}
-              <strong>Email:</strong> {currentUser.email}
-            </Card.Body>
-          </Card>
-          <div className="w-100 text-center mt-2">
-            <Button variant="link" onClick={handleLogout}>
-              Log Out
-            </Button>
-          </div>
+          <button onClick={handleLogout}>Log out</button>
+          <UploadFile />
+          <ImageArea />
         </>
       );
 }

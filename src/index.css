@@ -20,3 +20,29 @@ code {
   max-width: "400px";
   width: 60%;
 }
+
+.img-grid {
+  margin: 20px auto;
+}
+
+.img-wrap {
+  overflow: hidden;
+  height: 0;
+  padding: 15% 0%;
+  position: relative;
+  opacity: 0.8;
+}
+
+.img-wrap:hover {
+  opacity: 1;
+}
+
+.image-area-img {
+  min-width: 100%;
+  min-height: 100%;
+  max-width: 150%;
+  position: absolute;
+  top: 0;
+  left: 10;
+  margin-top: 2vh;
+}
