@@ -1,10 +1,10 @@
 import React, { useState, useRef } from 'react';
 import { Form, Button, Card, Alert } from "react-bootstrap"
-import { useAuth, currentUser } from '../contexts/AuthContext'
+import { useAuth } from '../contexts/AuthContext'
 import { Link, useHistory } from "react-router-dom"
 
 export const SignUp = () => {
-    const { signUp, currentUser } = useAuth();
+    const { signUp } = useAuth();
     const emailRef = useRef();
     const passwordRef = useRef();
     const passwordConfirmRef = useRef();

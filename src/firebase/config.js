@@ -4,12 +4,12 @@ import { getFirestore, serverTimestamp } from 'firebase/firestore'
 import { getAuth } from 'firebase/auth'
 
 const firebaseConfig = {
-    apiKey: "AIzaSyDtX0eGBXMoTmdQ7MNuFSNfSmCFsng0C48",
-    authDomain: "personal-photo-gallery-32b21.firebaseapp.com",
-    projectId: "personal-photo-gallery-32b21",
-    storageBucket: "personal-photo-gallery-32b21.appspot.com",
-    messagingSenderId: "275548052276",
-    appId: "1:275548052276:web:c2d61ef997b6631d8da361"
+    apiKey: process.env.REACT_APP_FIREBASE_API_KEY,
+    authDomain: process.env.REACT_APP_FIREBASE_AUTH_DOMAIN,
+    projectId: process.env.REACT_APP_FIREBASE_PROJECT_ID,
+    storageBucket: process.env.REACT_APP_FIREBASE_STORAGE_BUCKET,
+    messagingSenderId: process.env.REACT_APP_FIREBASE_MESSAGING_SEND_ID,
+    appId: process.env.REACT_APP_FIREBASE_APP_ID
 };
 
 const app = initializeApp(firebaseConfig);
