@@ -24,10 +24,10 @@ export const Profile = () => {
     return (
         <>
             <Row className="justify-content-between mt-4">
-                <Col xs={3}>
+                <Col xs={6}>
                     <h3>MyGallery</h3>
                 </Col>
-                <Col xs={2} className="log-out-button">
+                <Col xs={5} className="log-out-button">
                     <Button onClick={handleLogout}>Log out</Button>
                 </Col>
             </Row>
