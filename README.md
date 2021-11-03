@@ -1,5 +1,13 @@
+Sign up:
+![image](https://user-images.githubusercontent.com/87579632/140080036-a441c1b1-9d75-4a55-8b9a-90f8c3b26df0.png)
+
+Log in:
+![image](https://user-images.githubusercontent.com/87579632/140079973-81cbb0c6-3a84-42d6-8df1-44355f49a082.png)
+
+View of an account:
 ![Photo-Gallery](https://user-images.githubusercontent.com/87579632/140079374-46de643c-1b08-420f-b403-a7a29be03e2c.png)
 
+View of an another account:
 ![photo-gallery-otheruser](https://user-images.githubusercontent.com/87579632/140079430-f4d674d8-f0d0-4679-8e73-371be8453c3e.png)
 
 # Getting Started with Create React App
