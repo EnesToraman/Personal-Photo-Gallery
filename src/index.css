@@ -68,6 +68,7 @@ code {
   line-height: 50%;
   color: black;
   font-size: 30px;
+  cursor: pointer;
 }
 .upload-label:hover{
   background: black;

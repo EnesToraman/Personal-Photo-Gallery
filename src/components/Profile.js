@@ -7,7 +7,7 @@ import { Button, Col, Row } from "react-bootstrap"
 
 export const Profile = () => {
     const [error, setError] = useState("")
-    const { logOut } = useAuth()
+    const { logOut, currentUser } = useAuth()
     const history = useHistory()
 
     async function handleLogout() {
@@ -27,13 +27,18 @@ export const Profile = () => {
                 <Col xs={6}>
                     <h3>MyGallery</h3>
                 </Col>
-                <Col xs={5} className="log-out-button">
+                <Col xs={6} className="log-out-button">
                     <Button onClick={handleLogout}>Log out</Button>
                 </Col>
             </Row>
             <Row className="text-center mt-4">
                 <Col xs={12}>
                     <h2>Your Profile</h2>
+                </Col>
+            </Row>
+            <Row className="text-center mt-2">
+                <Col xs={12}>
+                    <div>{ currentUser.email }</div>
                 </Col>
             </Row>
             <Row className="text-center mt-2">

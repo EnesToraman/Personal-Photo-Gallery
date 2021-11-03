@@ -4,7 +4,6 @@ import { Row, Col } from 'react-bootstrap';
 
 export const ImageArea = () => {
     const { docs } = useFirestore('images');
-    console.log(docs);
 
     return (
         <div className="img-grid">
