@@ -1,7 +1,5 @@
-View of an account:
 ![Photo-Gallery](https://user-images.githubusercontent.com/87579632/140079374-46de643c-1b08-420f-b403-a7a29be03e2c.png)
 
-Log in:
 ![image](https://user-images.githubusercontent.com/87579632/140079973-81cbb0c6-3a84-42d6-8df1-44355f49a082.png)
 
 # Getting Started with Create React App
